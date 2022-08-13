@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex 布局</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #eee;
+    }
+    /* * {
+      border: 1px solid black;
+    } */
+    .flex {
+      display: flex;
+      align-items: cen;
+    }
+    .baiSe {
+      background-color: #fff;
+    }
+    .flex1 {
+      flex: 1;
+    }
+    .column {
+      flex-direction: column;
+    }
+    .mg8 {
+      margin: 8px;
+    }
+    .mgr8 {
+      margin-right: 8px;
+    }
+    .mgt8 {
+      margin-top: 8px;
+    }
+    .duiqi {
+      align-items: center;
+    }
+    .listItem {
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #999;
+      border-bottom: 1px solid gray;
+    }
+    .shodow {
+      box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+    }
+  </style>
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="baiSe">
+      <!-- 头像 -->
+      <div
+        style="
+          justify-content: center;
+          align-items: center;
+          height: 60px;
+          border-bottom: 1px solid #666;
+        "
+        class="flex duiqi"
+      >
+        <img
+          src="https://kangwenchang.com/logo.png"
+          alt="logo"
+          width="40px"
+          height="40px"
+        />
+        <div style="margin-left: 10px">王朝马汉</div>
+      </div>
+      <!-- 菜单栏 -->
+      <div class="flex column">
+        <div class="listItem">导航</div>
+        <div class="listItem">导航</div>
+        <div class="listItem">导航</div>
+        <div class="listItem">导航</div>
+        <div class="listItem">导航</div>
+      </div>
+    </div>
+    <!-- 主区域 -->
+    <div class="flex flex1 column">
+      <!-- 头部栏 -->
+      <div style="height: 60px; z-index: 1" class="baiSe shodow"></div>
+      <!-- 内容区 -->
+      <div style="overflow: auto" class="flex flex1">
+        <!--左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="flex">
+            <!-- 数据块 -->
+            <div style="height: 100px" class="flex1 baiSe shodow mgr8"></div>
+            <div style="height: 100px" class="flex1 baiSe shodow mgr8"></div>
+            <div style="height: 100px" class="flex1 baiSe shodow mgr8"></div>
+            <div style="height: 100px" class="flex1 baiSe shodow"></div>
+          </div>
+          <!-- 列表区 -->
+          <div class="flex column">
+            <div style="height: 160px" class="baiSe shodow mgt8"></div>
+            <div style="height: 160px" class="baiSe shodow mgt8"></div>
+            <div style="height: 160px" class="baiSe shodow mgt8"></div>
+            <div style="height: 160px" class="baiSe shodow mgt8"></div>
+            <div style="height: 160px" class="baiSe shodow mgt8"></div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="flex column mg8">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baiSe shodow"></div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="baiSe shodow mgt8"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
